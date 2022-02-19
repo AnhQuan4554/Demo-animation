@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--normal ball"><span>normal</span></div>
+        <div class="ball--reverse ball"><span>reverse</span></div>
+        <div class="ball--alternate ball"><span>alterate</span></div>
+        <div class="ball--alternate-reverse ball"><span>alternate-reverse</span></div>
+
+        <style>
+            .ball{
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               animation: move 5s 2;
+            }
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 30px;
+                color: #fff;
+
+            }
+            .ball--normal{
+                background-color: greenyellow;
+                animation-direction: normal;
+            }
+            .ball--reverse{
+                 background-color: red;
+                animation-direction: reverse;
+
+            }
+            .ball--alternate{
+                background-color: violet;
+                animation-direction: alternate;
+
+            }
+            .ball--alternate-reverse{
+                background-color: rgb(211, 211, 78);
+                animation-direction: alternate-reverse;
+
+            }
+            @keyframes move{
+                from{
+                    left: 0;
+                }
+                to{
+               left: 50%;
+
+                }
+            }
+        </style>
+</body>
+</html>
