@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+<!-- The animation-delay-->
+<body>
+             <h1>The animation-delay</h1>
+        <div class="demo-keyframe">
+
+            <div class="ball">
+                  
+            </div>  
+            <div class="ball2">
+                  
+            </div> 
+            <div class="circle">
+
+            </div>
+        </div>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .demo-keyframe{
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .ball{ /* quả bóng màu đỏ  */
+           position: absolute;
+            width: 150px;
+            height: 150px;
+            background: red;
+            border-radius: 50%;
+            animation: move_right 5s ease infinite;
+        }
+        .ball2{ /* quả bóng màu xám bị delay  */
+            margin-top:250px;
+           position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgb(95, 83, 83);
+            border-radius: 50%;
+            animation: move_right 5s ease infinite;
+            /* khác với bóng đỏ có thêm animation-delay  */
+            animation-delay: 2s;
+        }
+        .circle{
+            position: absolute;
+            width: 150px;
+            height: 70vh;
+            background-color: yellow;   
+            right: 0px;
+        }
+        @keyframes move_right{
+            from{
+                top: 5px;  /*  vị trí ban đầu là cách top 5px ,và khoảng cách 
+                sát lề trái   */
+                left: 0;
+            }
+            to{
+               top: 5px;
+                left: 100%; /* sau đó di chuyển đến bị trí bên phải  */
+            }
+
+        }
+        
+    </style>
+</body>
+</html>
