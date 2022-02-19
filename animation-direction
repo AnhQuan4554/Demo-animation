@@ -14,7 +14,8 @@
         <div class="ball--alternate-reverse ball"><span>alternate-reverse</span></div>
 
         <style>
-            .ball{
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
                 position: relative;
                 width: 150px;
                height: 150px;
