@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--none ball"><span> none</span></div>
+        <div class="ball--forwards ball"><span> forwards</span></div>
+        <div class="ball--backwards ball"><span>backwards</span></div>
+        <div class="ball--both ball"><span>both</span></div>
+       
+        <ul class="explantation-list">
+            <p class="text-heading">Toàn bộ quả bóng đều được di chuyển với số lần là 1
+                và thời gian delay để animation hoạt động là 2s Màu mặc định ban đầu các quả bóng là đen   
+                <br>và được di chuyển mặc định là từ trái ra giữa màn hình 
+                <br>Màu khi animation bắt đầu hoạt động  bên trái sẽ là đỏ và khi ra giữa sẽ được chuyển xanh 
+               
+            </p>
+            <li class="explantation-iteam">
+                <p>none: khi animation không hoạt động thì nó sẽ giữ nguyên trạng 
+                    thái bất động của phần tử,  không thêm một style nào 
+                    vào thành phần (mặc định).
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>forwards: khi animation không hoạt động sau khi kết
+                     thúc animation, giá trị này sẽ apply các thuộc tính
+                      của lần cuối cùng xuất hiện trong keyframe vào trạng
+                       thái của phần tử 
+                       <br> Cụ thể ở đây khi di chuyển đến giữa màn hình(kết thúc)
+                       thi nó sẽ thêm thuộc tính cuối cùng là chuyển thành màu xanh 
+                       và ở giữa màn hình chứ về vị trí ban đầu  
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>backwards: khi animation không hoạt động trước khi 
+                    bắt đầu animation (đang trong thời gian delay), 
+                    giá trị này sẽ apply các thuộc tính của lần xuất 
+                    hiện đầu tiên trong keyfame vào trạng thái của phần 
+                    tử (phụ thuộc vào thuộc tính anmation-direction).
+                    <br> Cụ thể đáng ra khi animation chưa hoạt động thì màu của nó 
+                    phải là đen thế nhưng nó  apply các thuộc tính của lần xuất 
+                    hiện đầu tiên trong animation ( màu đỏ ) vào .  
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>kết hợp cả forwards và backwards cho trạng thái phần tử.
+                    <br> Y như quả bóng backwards chỉ thêm là khi đến giữa màn hình nó
+                    nó sẽ ở tại vị trí đó như quả bóng thứ forwards
+                </p>
+            </li>
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               background-color: #000;
+               animation: move 5s 1;
+               animation-delay: 2s; /* để delay 2 s thì trước khi 
+               có chuyển động animation màu các quả bóng sẽ là màu đen */
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--none{
+                animation-fill-mode: none;
+            
+            }
+            .ball--forwards{
+              
+               animation-fill-mode: forwards;
+
+            }
+            .ball--backwards{
+
+               animation-fill-mode: backwards;
+                
+
+            }
+            .ball--both{
+
+               animation-fill-mode: both;
+                
+
+            }
+         
+            @keyframes move{
+                from{
+                    left: 0;
+                    background-color: red;
+                }
+                to{
+               left: 50%;
+                    background-color: yellowgreen;
+                }
+            }
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+              margin-bottom: 60px;
+
+            }
+            .explantation-iteam p {
+                font-size: 17px;
+            }
+        </style>
+</body>
+</html>
