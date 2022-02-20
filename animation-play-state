@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--1 ball"><span> running</span></div>
+        <div class="ball--2 ball"><span> pause </span></div>
+        
+       
+        <ul class="explantation-list">
+           <p class="text-heading">Cả 2 quả bóng đều được 
+            gán cho animation có chuyển động như nhau là đều từ trái ra giữa 
+           </p>
+            <li class="explantation-iteam">
+                <p>  animation-play-state: running; có chuyển động như bình thường 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p> animation-play-state: paused; sẽ làm chuyển động dùng lại khi đang đi 
+                    hoặc không di chuyển  
+                </p>
+            </li>
+           
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               animation-fill-mode: forwards;
+
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--1{
+               animation-iteration-count: 1;
+               animation-name: move-right;
+               animation-duration: 5s;
+               background-color: red;
+               animation-play-state: paused;
+               /* animation-play-state: running;
+ */
+            }
+            .ball--2{
+                animation-iteration-count: 2;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: yellowgreen;
+                animation-play-state: running;
+            }
+          
+         
+            @keyframes move-right{
+                from{
+                    left: 0;
+                }
+                to{
+               left: 50%;
+                }
+            }
+    
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+               
+                margin-bottom: 150px;
+
+            }
+            .explantation-iteam p {
+                font-size: 27px;
+            }
+        </style>
+</body>
+</html>
