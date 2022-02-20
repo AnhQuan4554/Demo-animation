@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--1 ball"><span> 1 lần</span></div>
+        <div class="ball--2 ball"><span> 2 lần </span></div>
+        <div class="ball--5 ball"><span>5  lần</span></div>
+        <div class="ball--infinite ball"><span>vô số lần</span></div>
+       
+        <ul class="explantation-list">
+            <p class="text-heading">
+              Di chuyển mặc định từ trái ra giữa màn hình 
+               
+            </p>
+            <li class="explantation-iteam">
+                <p>Quả bóng di chuyển 1 lần rồi dừng lại 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>Quả bóng di chuyển 2 lần rồi dừng lại 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>Quả bóng di chuyển 3 lần rồi dừng lại 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>Quả bóng di chuyển vô số lần 
+                </p>
+            </li>
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               background-color: #000;
+               animation: move 2s ; /* di chuyển trong 2 s */
+               animation-fill-mode: forwards;
+
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--1{
+               animation-iteration-count: 1;
+            }
+            .ball--2{
+                animation-iteration-count: 2;
+
+            }
+            .ball--5{
+                animation-iteration-count: 5;
+            }
+            .ball--infinite{
+                animation-iteration-count: infinite;
+            }
+         
+            @keyframes move{
+                from{
+                    left: 0;
+                    background-color: red;
+                }
+                to{
+               left: 50%;
+                    background-color: red;
+                }
+            }
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+                margin-bottom: 150px;
+
+
+            }
+            .explantation-iteam p {
+                font-size: 27px;
+            }
+        </style>
+</body>
+</html>
