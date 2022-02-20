@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--1 ball"><span> animation-duration: 1s</span></div>
+        <div class="ball--2 ball"><span> animation-duration :2s</span></div>
+        <div class="ball--3 ball"><span>animation-duration :3s</span></div>
+       
+        <ul class="explantation-list">
+            <p class="text-heading">Toàn bộ quả bóng đều được di chuyển với số lần là 1 
+                <br>và được di chuyển mặc định là từ trái ra giữa màn hình 
+               
+            </p>
+            <li class="explantation-iteam">
+                <p>Quả bóng thứ 1 sẽ được di chuyển với animation-duration : 1 s
+                    <br> Do đó sẽ di chuyển ra giữa màn hình nhanh hơn quả bóng thứ 2,3
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>Quả bóng thứ 2 sẽ được di chuyển với animation-duration : 2 s
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>Quả bóng thứ 3 sẽ được di chuyển với animation-duration : 3 s
+                </p>
+            </li>
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               animation: move 5s 1;
+               animation-fill-mode: forwards;
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--1{
+                background-color: greenyellow;
+                animation-duration: 1s;
+            }
+            .ball--2{
+                 background-color: red;
+                animation-duration: 2s;
+
+            }
+            .ball--3{
+                background-color: violet;
+                animation-duration: 3s;
+
+            }
+         
+            @keyframes move{
+                from{
+                    left: 0;
+                }
+                to{
+               left: 50%;
+
+                }
+            }
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+                height: 150px;
+
+            }
+            .explantation-iteam p {
+                font-size: 17px;
+            }
+        </style>
+</body>
+</html>
