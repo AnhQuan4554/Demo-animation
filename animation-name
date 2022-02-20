@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--1 ball"><span> move-right</span></div>
+        <div class="ball--2 ball"><span> move-bottom </span></div>
+        
+       
+        <ul class="explantation-list">
+           <p class="text-heading">Tên animation do mình tự đặt, 
+               sao cho phù hợp với tác dụng của chúng 
+           </p>
+            <li class="explantation-iteam">
+                <p> animation name : move-right nên dịch sang phải 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>animation name : move-bottom nên dịch xuống dưới
+                </p>
+            </li>
+           
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               animation-fill-mode: forwards;
+
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--1{
+               animation-iteration-count: 1;
+               animation-name: move-right;
+               animation-duration: 5s;
+               background-color: red;
+
+            }
+            .ball--2{
+                animation-iteration-count: 2;
+                animation-name: move-bottom;
+               animation-duration: 5s;
+                background-color: yellowgreen;
+            }
+          
+         
+            @keyframes move-right{
+                from{
+                    left: 0;
+                }
+                to{
+               left: 50%;
+                }
+            }
+            @keyframes move-bottom{
+                from{
+                    top:0px;
+                    left: 0;
+                }
+                to{
+                    top: 400px;
+                  left: 0;
+                }
+            }
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+               
+                margin-bottom: 150px;
+
+            }
+            .explantation-iteam p {
+                font-size: 27px;
+            }
+        </style>
+</body>
+</html>
