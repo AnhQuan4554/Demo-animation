@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+
+<body>
+        <div class="ball--linear ball"><span> running</span></div>
+        <div class="ball--ease ball"><span> ease </span></div>
+        <div class="ball--ease-in ball"><span> ease-in </span></div>
+        <div class="ball--ease-out ball"><span> ease-out </span></div>
+        <div class="ball--cubic-bezier ball"><span> cubic-bezier </span></div>
+        <div class="ball--steps ball"><span> steps </span></div>
+        
+       
+        <ul class="explantation-list">
+           <p class="text-heading">animation-timing-function giúp chúng ta điều chỉnh được 
+               nhịp độ di chuyển của đối tượng có animation
+           </p>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function : linear Quả bóng sẽ có cùng tốc độ chạy 
+                    từ đầu cho đến cuối
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function : ease Quả bóng sẽ có tốc độ khởi đầu chậm và kết thúc chậm
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function : ease-in Quả bóng sẽ có tốc độ khởi đầu chậm
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function : ease-out Quả bóng sẽ có tốc độ kết thúc chậm
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function : cubic-bezier(x1, y1, x2, y2)  các giá trị trong khoảng từ 0->1 
+                    ta có thể điều chính tốc độ  theo ý mình 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>  animation-timing-function :steps(int,start|end) tham số đầu tiền là 
+                    khoảng thời gian chạy (>=0) . Tham số thứ 2 là giá trị bắt đầu hoặc kết thúc 
+                    và nếu không truyền tham số thứ 2 mặc định là nó sẽ là giá trị kết thúc 
+                    <br>
+                    Như ở hình bên tôi đã cho steps(5) tức là quả bóng sẽ di chuyển 5 bước
+                    là kết thúc hành trình 
+                </p>
+            </li>
+        </ul>
+
+        <style>
+           /* css chung */
+            .ball{  /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               margin-bottom: 30px;
+               animation-fill-mode: forwards;
+                animation:  move-right 5s forwards;
+            }
+            .ball:first-child{
+                margin-top: 50px;
+            }
+            span{ /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 25px;
+                color: #fff;
+
+            }
+            .ball--linear{
+               animation-iteration-count: 1;
+               animation-name: move-right;
+               animation-duration: 5s;
+               background-color: red;
+               animation-timing-function:linear;
+            }
+            .ball--ease{
+                animation-iteration-count: 1;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: yellowgreen;
+              
+               animation-timing-function:ease;
+
+            }
+            .ball--ease-in{
+                animation-iteration-count: 1;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: rgb(90, 211, 201);
+             
+               animation-timing-function:ease-in;
+
+            }
+            .ball--ease-out{
+                animation-iteration-count: 1;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: rgb(76, 80, 70);
+               animation-timing-function:ease-out;
+
+            }
+            .ball--cubic-bezier{
+                animation-iteration-count: 1;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: rgb(50, 66, 205);
+               animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1)
+
+            }
+            .ball--steps{
+                animation-iteration-count: 1;
+                animation-name: move-right;
+               animation-duration: 5s;
+                background-color: rgb(233, 94, 117);
+               animation-timing-function:steps(5)
+
+            }
+          
+         
+            @keyframes move-right{
+                from{
+                    left: 0;
+                }
+                to{
+               left: 50%;
+                }
+            }
+    
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+               
+                height: 150px;
+
+            }
+            .explantation-iteam p {
+                font-size: 20px;
+            }
+        </style>
+</body>
+</html>
