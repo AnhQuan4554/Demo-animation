@@ -13,6 +13,45 @@
         <div class="ball--alternate ball"><span>alterate</span></div>
         <div class="ball--alternate-reverse ball"><span>alternate-reverse</span></div>
 
+        <ul class="explantation-list">
+            <p class="text-heading">Toàn bộ quả bóng đều được di chuyển với số lần là 3 
+                <br>và được di chuyển mặc định là từ trái ra giữa màn hình 
+               
+            </p>
+            <li class="explantation-iteam">
+                <p>normal: animation di chuyển bình thường tiến về phía trước (mặc định)
+                    .Cụ thể là từ vị trí sát mép trái tiến đến giữa mà hình 
+                   <br> * Khi chạy xong 1 lần lặp sẽ tự nhảy về bên trái màn hình 
+                    khác với alternate và alternate-reverse ( 2 hiệu ứng này 
+                    sẽ di chuyển mượt mà về bên trái màn hình )
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>reverse:animation di chuyển theo hướng ngược lại, lui về sau.
+                    <br>Cụ thể khác với normal nó sẽ đi từ chính giữa màn hình về bên trái 
+                    <br> * Khi chạy xong 1 lần lặp sẽ tự nhảy về bên trái màn hình 
+                    khác với alternate và alternate-reverse ( 2 hiệu ứng này 
+                    sẽ di chuyển mượt mà về bên trái màn hình )
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>alternate: animation di chuyển tiến về trước, sau đó lui theo hướng ngược lại(
+                    phụ thuộc vào số lần lặp lại )
+                    <br> sau khi đến giữa màn hình sẽ lập tức quay về bên trái <br>
+                    và do số lần lặp lại 3 nên sau khi chạy về bên trái (thực hiện xong 2 lần 
+                    lặp ) sẽ lập tức chạy ra tiếp giữa màn hình 
+                </p>
+            </li>
+            <li class="explantation-iteam">
+                <p>alternate-reverse: animation di chuyển ngược lại trước, rồi đổi chiều tiến về trước.
+                    <br>  Xuất phái điểm như reverse chỉ khác sau khi di 
+                    chuyển về bên trái màn hình rồi sẽ lập tức di chuyển 
+                    ngược lại ra giữa màn hình <br>
+                    
+                </p>
+            </li>
+        </ul>
+
         <style>
            /* css chung */
             .ball{  /* css cho các quả bóng có kích thước  */
@@ -21,9 +60,9 @@
                height: 150px;
                border-radius: 50%;
                margin-bottom: 30px;
-               animation: move 5s 2;
+               animation: move 5s 3;
             }
-            span{
+            span{ /* các chữ bên trong quả bóng */
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -49,7 +88,7 @@
             .ball--alternate-reverse{
                 background-color: rgb(211, 211, 78);
                 animation-direction: alternate-reverse;
-
+                animation-fill-mode: both;
             }
             @keyframes move{
                 from{
@@ -59,6 +98,27 @@
                left: 50%;
 
                 }
+            }
+
+            /* giải thích cách chạy  */
+            .explantation-list{
+                box-sizing: border-box;
+              
+                width: 40%;
+                position: absolute;
+                right: 0%;
+                top: 0;
+            }
+            .text-heading{
+               font-size: 20px;
+                text-align: center;
+            }
+            .explantation-iteam{
+                height: 150px;
+
+            }
+            .explantation-iteam p {
+                font-size: 17px;
             }
         </style>
 </body>
