@@ -18,9 +18,18 @@
 
             </div>
         </div>
+        <h4 class="explant">Quy tắc @keyframes chỉ định code animation .
+
+            animation được tạo ra bằng cách thay đổi dần dần từ một tập hợp các kiểu CSS này sang một tập hợp các kiểu CSS khác.
+            
+            Trong quá trình animation, bạn có thể thay đổi tập hợp các kiểu CSS nhiều lần.</h4>
     <style>
         h1{
             text-align: center;
+        }
+        h4{
+            margin-top: 300px;
+            font-size: 30px;
         }
         .demo-keyframe{
             max-width: 1200px;
