@@ -21,9 +21,18 @@
 
             </div>
         </div>
+        <h4>Thuộc tính animation-delay  chỉ định độ trễ để bắt đầu animation.
+
+            Giá trị độ trễ animation được xác định bằng giây (s) hoặc mili giây (mili giây).
+        Như trong ví dụ trên đã cài đặt quả bóng màu xám delay 2 s o với quả bóng màu đỏ </h4>
     <style>
         h1{
             text-align: center;
+        }
+        h4{
+           position: absolute;
+           top: 560px;
+           font-size: 30px;
         }
         .demo-keyframe{
             max-width: 1200px;
@@ -32,6 +41,7 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            animation-fill-mode: backwards;
         }
         .ball{ /* quả bóng màu đỏ  */
            position: absolute;
