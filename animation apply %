@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+<!-- The animation-delay-->
+<body>
+             <h1>The animation apply %</h1>
+        <div class="demo-keyframe">
+
+            <div class="ball">
+                  
+            </div>  
+            <div class="ball2">
+                  
+            </div> 
+            <div class="circle">
+
+            </div>
+        </div>
+        <h4>Thay vì chỉ dùng địa điểm bắt đầu là from và kết thúc đến to ta sẽ
+            cho animation di chuyển  và thay đổi trên từng khoảng trên quãng đường  </h4>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h4{
+           position: absolute;
+           top: 560px;
+           font-size: 30px;
+        }
+        .demo-keyframe{
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            animation-fill-mode: backwards;
+        }
+        .ball{ /* quả bóng màu đỏ vẫn  */
+           position: absolute;
+            width: 150px;
+            height: 150px;
+            background: red;
+            border-radius: 50%;
+            animation: move_right 8s ease infinite;
+        }
+  
+    
+        @keyframes move_right{
+            0%{
+                top: 5px;  /*  vị trí ban đầu là cách top 5px ,và khoảng cách 
+                sát lề trái   */
+                left: 0;
+            }
+            25%{
+                top: 150px;
+                left : 40px;
+                background-color:yellow ;
+            }
+            50%{
+                top: 30px;
+                left : 250px;
+                background-color:rgb(49, 158, 185) ;
+            }
+            75%{
+                top: 500px;
+                left : 250px;
+                background-color:rgb(117, 121, 122) ;
+            }
+            100%{
+               top: 5px;
+                left: 100%; /* sau đó di chuyển đến bị trí bên phải  */
+                background-color: aqua;
+            }
+
+        }
+        
+    </style>
+</body>
+</html>
