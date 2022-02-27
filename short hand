@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-animation</title>
+</head>
+<!-- VD @keyframes-->
+<body>
+             <h1>cú pháp short hand</h1>
+        <div class="demo-keyframe">
+
+            <div class="ball">
+                  
+            </div>  
+            <div class="circle">
+
+            </div>
+        </div>
+        <h4>Cú pháp short hand như sau 
+            <br>name : move_right <br> animation-duration: 5s <br>
+            animation-timming-function: ease <br>
+            animation-delay: 2s <br>
+            animation-interation-count : 4 <br> animation-direction: alternate
+            <br> animation-fill-move : forwards
+        </h4>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h4{
+            margin-top: 300px;
+            font-size: 30px;
+        }
+        .demo-keyframe{
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+        }
+        .ball{ /* quả bóng màu đỏ  */
+           position: absolute;
+            width: 150px;
+            height: 150px;
+            background: red;
+            border-radius: 50%;
+            animation: move_right 5s ease 2s 4 alternate forwards;
+        }
+        .circle{
+            position: absolute;
+            width: 155px;
+            height: 155px;
+            background-color: transparent;
+            border: 3px solid yellowgreen;
+            border-radius: 50%;
+            right: -6px;
+        }
+        @keyframes move_right{
+            from{
+                top: 5px;  /*  vị trí ban đầu là cách top 5px ,và khoảng cách 
+                sát lề trái   */
+                right: 85%;
+            }
+            to{
+               top: 5px;
+                right: 0; /* sau đó di chuyển đến bị trí bên phải  */
+            }
+
+        }
+        
+    </style>
+</body>
+</html>
