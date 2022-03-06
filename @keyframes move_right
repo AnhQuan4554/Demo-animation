@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo-animation</title>
-</head>
-<!-- VD @keyframes-->
-<body>
-             <h1>The @keyframes move_right</h1>
-        <div class="demo-keyframe">
-
-            <div class="ball">
-                  
-            </div>  
-            <div class="circle">
-
-            </div>
-        </div>
-        <h4 class="explant">Quy tắc @keyframes chỉ định code animation .
-
-            animation được tạo ra bằng cách thay đổi dần dần từ một tập hợp các kiểu CSS này sang một tập hợp các kiểu CSS khác.
-            
-            Trong quá trình animation, bạn có thể thay đổi tập hợp các kiểu CSS nhiều lần.</h4>
-    <style>
-        h1{
-            text-align: center;
-        }
-        h4{
-            margin-top: 300px;
-            font-size: 30px;
-        }
-        .demo-keyframe{
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            position: relative;
-        }
-        .ball{ /* quả bóng màu đỏ  */
-           position: absolute;
-            width: 150px;
-            height: 150px;
-            background: red;
-            border-radius: 50%;
-            animation: move_right 5s ease infinite;
-        }
-        .circle{
-            position: absolute;
-            width: 155px;
-            height: 155px;
-            background-color: transparent;
-            border: 3px solid yellowgreen;
-            border-radius: 50%;
-            right: -6px;
-        }
-        @keyframes move_right{
-            from{
-                top: 5px;  /*  vị trí ban đầu là cách top 5px ,và khoảng cách 
-                sát lề trái   */
-                right: 100%;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>keyframes-2</title>
+        <style>
+            .ball {
+                /* quả bóng màu đỏ */
+                position: relative;
+                width: 150px;
+                height: 150px;
+                background: red;
+                border-radius: 50%;
+                animation: move 4s linear infinite;
             }
-            to{
-               top: 5px;
-                right: 0; /* sau đó di chuyển đến bị trí bên phải  */
+            .ball2 {
+                /* quả bóng màu đỏ */
+                position: relative;
+                width: 150px;
+                height: 150px;
+                background: rgb(179, 163, 163);
+                border-radius: 50%;
+                animation: move2 4s linear infinite;
             }
-
-        }
-        
-    </style>
-</body>
+            button{
+                    top: 520px;
+                    position: absolute;
+                    
+                }
+            @keyframes move {
+                from {
+                    left: 0; /*  vị trí ban đầu sát lề trái, màu đỏ */
+                }
+                to {
+                    left: 80%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: blue;
+                }
+            }
+            @keyframes move2{
+                0%,100% {
+                    top:  50px;
+                    left: 0; /*  vị trí ban đầu sát lề trái, màu đỏ */
+                }
+                70% {
+                    top: 100px;
+                    left: 60%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: rgb(255, 238, 0);
+                }
+                90% {
+                    top: 200px;
+                    left: 80%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: rgb(255, 238, 0);
+                }
+              
+            }
+        </style>
+    </head>
+    <!-- The animation-delay-->
+    <body>
+        <h1>CSS Animations</h1>
+        <div class="ball"></div>
+        <div class="ball2"></div>
+        <button>Sửa tên  keyframe quả bóng 2 </button>
+        <!-- js -->
+        <script>
+            const btn = document.querySelector('button');
+            const ball_2= document.querySelector('.ball2');
+            btn.onclick = function(){
+                ball_2.style.animationName="delete"
+                
+            }
+        </script>
+    </body>
 </html>
