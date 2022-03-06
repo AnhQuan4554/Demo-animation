@@ -1,107 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo-animation</title>
-</head>
-
-<body>
-        <div class="ball--1 ball"><span> move-right</span></div>
-        <div class="ball--2 ball"><span> move-bottom </span></div>
-        
-       
-        <ul class="explantation-list">
-           <p class="text-heading">Tên animation do mình tự đặt, 
-               sao cho phù hợp với tác dụng của chúng 
-           </p>
-            <li class="explantation-iteam">
-                <p> animation name : move-right nên dịch sang phải 
-                </p>
-            </li>
-            <li class="explantation-iteam">
-                <p>animation name : move-bottom nên dịch xuống dưới
-                </p>
-            </li>
-           
-        </ul>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>keyframes-2</title>
         <style>
-           /* css chung */
-            .ball{  /* css cho các quả bóng có kích thước  */
+            .ball1{
                 position: relative;
                 width: 150px;
-               height: 150px;
-               border-radius: 50%;
-               margin-bottom: 30px;
-               animation-fill-mode: forwards;
-
+                height: 150px;
+                background: red;
+                border-radius: 50%;
+                animation: move 4s linear infinite;
             }
-            span{ /* các chữ bên trong quả bóng */
+            .ball2 {
+                /* quả bóng màu đỏ */ 
+                margin-top: 170px;
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                font-size: 25px;
-                color: #fff;
-
+                width: 150px;
+                height: 150px;
+                background: red;
+                border-radius: 50%;
+                animation: move2 4s linear infinite;
+               
             }
-            .ball--1{
-               animation-iteration-count: 1;
-               animation-name: move-right;
-               animation-duration: 5s;
-               background-color: red;
-
+            .ball3 {    
+                /* quả bóng màu đỏ */
+               margin-top: 160px;
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                background: rgb(179, 163, 163);
+                border-radius: 50%;
+                animation: initial    4s linear infinite;
             }
-            .ball--2{
-                animation-iteration-count: 2;
-                animation-name: move-bottom;
-               animation-duration: 5s;
-                background-color: yellowgreen;
+           /*  button{
+                    top: 520px;
+                    position: absolute;
+                    
+                } */
+            @keyframes move {
+                from {
+                    left: 0; /*  vị trí ban đầu sát lề trái, màu đỏ */
+                }
+                to {
+                    left: 80%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: red;
+                }
+            }
+            @keyframes move2{
+                0%,100% {
+                    top:  0px;
+                    left: 0px; /*  vị trí ban đầu sát lề trái, màu đỏ */
+                }
+                40% {
+                    top: 160px;
+                    left: 60%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: rgb(255, 238, 0);
+                }
+                80% {
+                    top: 180px;
+                    left: 80%; /* sau đó di chuyển đến vị trí ban đầu, chuyển về màu đỏ  */
+                    background-color: rgb(255, 238, 0);
+                }
+              
             }
           
-         
-            @keyframes move-right{
-                from{
-                    left: 0;
-                }
-                to{
-               left: 50%;
-                }
-            }
-            @keyframes move-bottom{
-                from{
-                    top:0px;
-                    left: 0;
-                }
-                to{
-                    top: 400px;
-                  left: 0;
-                }
-            }
-
-            /* giải thích cách chạy  */
-            .explantation-list{
-                box-sizing: border-box;
-              
-                width: 40%;
-                position: absolute;
-                right: 0%;
-                top: 0;
-            }
-            .text-heading{
-               font-size: 20px;
-                text-align: center;
-            }
-            .explantation-iteam{
-               
-                margin-bottom: 150px;
-
-            }
-            .explantation-iteam p {
-                font-size: 27px;
-            }
         </style>
-</body>
+    </head>
+    <!-- The animation-delay-->
+    <body>
+        <h1>CSS Animations</h1>
+      
+
+            <div class="ball1">
+                <div class="ball2">
+                    <div class="ball3"></div>
+                </div>
+            </div>
+        
+        <input id="ball1" type="text" placeholder="Quả bóng 1 ">
+        <input id="ball2" type="text" placeholder="Quả bóng 2 ">
+        <input id="ball3" type="text" placeholder="Quả bóng 3 ">
+        <!-- js -->
+        <script>
+          const input1 = document.querySelector('#ball1');
+          const ball1 = document.querySelector('.ball1')
+          input1.onchange = (e)=>{
+              const text = e.target.value;
+              ball1.style.animationName = text;
+              
+          }
+
+          const input2 = document.querySelector('#ball2');
+          const ball2 = document.querySelector('.ball2')
+         
+          input2.onchange = (e)=>{    
+              const text = e.target.value;
+              ball2.style.animationName = text;
+            
+          }
+          const input3 = document.querySelector('#ball3');
+          const ball3 = document.querySelector('.ball3')
+          input3.onchange = (e)=>{
+              const text = e.target.value;
+              ball3.style.animationName = text;
+          }
+        </script>
+    </body>
 </html>
