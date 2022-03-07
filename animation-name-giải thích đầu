@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>animation-name</title>
+        <style>
+            /* css chung */
+            .ball {
+                /* css cho các quả bóng có kích thước  */
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin-bottom: 30px;
+                animation-fill-mode: forwards;
+            }
+          
+            span {
+                /* các chữ bên trong quả bóng */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 25px;
+                color: #fff;
+            }
+          
+            .ball-1 {
+               /*  animation-name: move-right; */
+                background-color: red;
+            }
+          
+            .ball-2 {
+                animation-name: move-bottom;
+                background-color: yellowgreen;
+            }
+
+            @keyframes move-right {
+                from {
+                    left: 0;
+                }
+                to {
+                    left: 400px;
+                }
+            }
+          
+            @keyframes move-bottom {
+                from {
+                    top: 0px;
+                    left: 0;
+                }
+                to {
+                    top: 300px;
+                    left: 0;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>CSS Animations</h1>
+        <div class="ball-1 ball"><span> move-right</span></div>
+        <div class="ball-2 ball"><span> move-bottom </span></div>
+    </body>
+</html>
