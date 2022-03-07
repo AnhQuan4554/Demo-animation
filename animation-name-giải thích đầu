@@ -28,7 +28,7 @@
             }
           
             .ball-1 {
-               /*  animation-name: move-right; */
+                animation-name: move-right;
                 background-color: red;
             }
           
@@ -53,8 +53,13 @@
                 }
                 to {
                     top: 300px;
-                    left: 0;
+                    left: 50%;
                 }
+            }
+            #ball-1{
+                position: absolute;
+                top: 230px;
+                left: 50%;
             }
         </style>
     </head>
@@ -63,5 +68,13 @@
         <h1>CSS Animations</h1>
         <div class="ball-1 ball"><span> move-right</span></div>
         <div class="ball-2 ball"><span> move-bottom </span></div>
+        <button id="ball-1">Làm sai tên animation1</button>
+        <script>
+                var btn_1 =document.querySelector('#ball-1');//nút bấm
+                var ball_1 =document.querySelector('.ball-1');//bóng 
+                btn_1.onclick = ()=>{
+                    ball_1.style.animationName="myNEWmove"
+                } 
+        </script>
     </body>
 </html>
