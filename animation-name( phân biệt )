@@ -12,7 +12,8 @@
                 height: 150px;
                 background: red;
                 border-radius: 50%;
-                animation: move 4s linear infinite;
+                animation: move 2s;
+
             }
             .ball2 {
            
@@ -20,20 +21,23 @@
                 position: absolute;
                 width: 150px;
                 height: 150px;
+                top:90px;
                 background: red;
                 border-radius: 50%;
-                animation: move2 4s linear infinite;
+                animation: move12 4s;
+
                
             }
             .ball3 {    
           
                margin-top: 160px;
                 position: absolute;
+           
                 width: 150px;
                 height: 150px;
                 background: rgb(179, 163, 163);
                 border-radius: 50%;
-                animation: initial    4s linear infinite;
+                animation-name: move;
             }
        
             @keyframes move { /* đơn thuẩn di chuyển từ trái sang phải */
@@ -47,7 +51,7 @@
             }
             @keyframes move2{/*  di chuyển xuống dưới sang trái  rồi quay lại vị trí ban đầu  */
                 /* khoảng cách top left là so với thẻ cha cha nó  */
-                0%,100% {
+                0% {
                     top:  0px;
                     left: 0px; 
                 }
@@ -61,6 +65,10 @@
                     left: 80%; 
                     background-color: rgb(255, 238, 0);
                 }
+                100%{
+                    top: 200px;
+                    left: 300pxs;
+                }
               
             }
           
@@ -72,9 +80,9 @@
       
 
             <div class="ball1">
-                <div class="ball2">
-                    <div class="ball3"></div>
-                </div>
+            </div>
+            <div class="ball2">
+                <div class="ball3"></div>
             </div>
         
         <input id="ball1" type="text" placeholder="Quả bóng 1 ">
