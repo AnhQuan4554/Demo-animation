@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>animation-duration</title>
+    </head>
+    <style>
+        /* css chung */
+        .ball {
+            /* css cho các quả bóng có kích thước  */
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+           
+            
+        }
+        span {
+            /* các chữ bên trong quả bóng */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15px;
+            color: #fff;
+        }
+        .ball--1 {
+            position: relative;
+            background-color: greenyellow;
+            animation: move1 4s;
+        }
+        .ball--2 {
+           position: absolute;
+           top: 150px;
+            background-color: red;
+           animation: move2 2s;
+        }
+        .ball--3 {
+            position: absolute;
+           top: 150px;
+            background-color: violet;
+            animation-duration: initial;/* intinal bằng với viêc không viết gì cả  */
+
+        }
+
+  
+        
+        @keyframes move1 {
+            from {
+                left: 0;
+            }
+            to {
+                left: 700px;
+            }
+        }
+        @keyframes move2 {
+            from {
+                left: 0;
+            }
+            to {
+                left: 200px;
+            }
+        }
+        h2{
+            position: absolute;
+            top: 550px;
+        }
+        input{
+            position: absolute;
+            top: 610px;
+        }
+    </style>
+    <body>
+        <h1>CSS Animations-duration</h1>
+        <div class="ball--1 ball" ><span> animation-duration ball--1</span>
+            <div class="ball--2 ball"><span> animation-duration ball-2</span>
+                <div class="ball--3 ball"><span>animation-duration ball-3</span></div>
+            </div>
+        </div>
+
+  
+    </body>
+</html>
