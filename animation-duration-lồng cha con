@@ -1,86 +1,91 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>animation-duration</title>
-    </head>
-    <style>
-        /* css chung */
-        .ball {
-            /* css cho các quả bóng có kích thước  */
-            position: relative;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 30px;
+        <title>keyframes-2</title>
+        <style>
+            .ball1{
+                position: relative;
+                width: 150px;
+                height: 150px;
+                background: red;
+                border-radius: 50%;
+                animation: move 2s;
+
+            }
+            .ball2 {
            
-            
-        }
-        span {
-            /* các chữ bên trong quả bóng */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 15px;
-            color: #fff;
-        }
-        .ball--1 {
-            position: relative;
-            background-color: greenyellow;
-            animation: move1 4s;
-        }
-        .ball--2 {
-           position: absolute;
-           top: 150px;
-            background-color: red;
-           animation: move2 2s;
-        }
-        .ball--3 {
-            position: absolute;
-           top: 150px;
-            background-color: violet;
-            animation-duration: initial;/* intinal bằng với viêc không viết gì cả  */
+                margin-top: 170px;
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                top:90px;
+                background: red;
+                border-radius: 50%;
+                animation: move2 4s;
 
-        }
-
-  
-        
-        @keyframes move1 {
-            from {
-                left: 0;
+               
             }
-            to {
-                left: 700px;
+            .ball3 {    
+          
+               margin-top: 160px;
+                position: absolute;
+           
+                width: 150px;
+                height: 150px;
+                background: rgb(179, 163, 163);
+                border-radius: 50%;
+                animation-name: move;
             }
-        }
-        @keyframes move2 {
-            from {
-                left: 0;
+       
+            @keyframes move { /* đơn thuẩn di chuyển từ trái sang phải */
+                from {
+                    left: 0;
+                }
+                to {
+                    left: 80%; 
+                    background-color: red;
+                }
             }
-            to {
-                left: 200px;
+            @keyframes move2{/*  di chuyển xuống dưới sang trái  rồi quay lại vị trí ban đầu  */
+                /* khoảng cách top left là so với thẻ cha cha nó  */
+                0% {
+                    top:  100px;
+                    left: 0px; 
+                }
+                40% {
+                    top: 160px;
+                    left: 60%; 
+                    background-color: rgb(255, 238, 0);
+                }
+                80% {
+                    top: 180px;
+                    left: 80%; 
+                    background-color: rgb(255, 238, 0);
+                }
+                100%{
+                    top: 200px;
+                    left: 300pxs;
+                }
+              
             }
-        }
-        h2{
-            position: absolute;
-            top: 550px;
-        }
-        input{
-            position: absolute;
-            top: 610px;
-        }
-    </style>
+          
+        </style>
+    </head>
+   
     <body>
-        <h1>CSS Animations-duration</h1>
-        <div class="ball--1 ball" ><span> animation-duration ball--1</span>
-            <div class="ball--2 ball"><span> animation-duration ball-2</span>
-                <div class="ball--3 ball"><span>animation-duration ball-3</span></div>
-            </div>
-        </div>
+        <h1>CSS Animations</h1>
+      
 
-  
+            <div class="ball1">
+            </div>
+            <div class="ball2">
+                <div class="ball3"></div>
+            </div>
+        
+    
     </body>
 </html>
